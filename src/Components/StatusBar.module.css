@@ -1,0 +1,19 @@
+.container {
+  width: 98vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: safe;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 5px;
+  border-radius: 10px;
+  border:2px solid #062a49;
+  font-size: medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 5px;
+  height: 100%;
+  background-color: #062a49;
+}

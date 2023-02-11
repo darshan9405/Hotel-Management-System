@@ -27,3 +27,11 @@ export const sideData = [
   { table: 7, name: "Mr tom" },
   { table: 88, name: "jerry" },
 ];
+
+export const statusData = [
+  { table: 1, status: "Cooking" },
+  { table: 2, status: "Billing" },
+  { table: 3, status: "Cooking" },
+  { table: 4, status: "Billing" },
+  { table: 5, status: "Billing" },
+];

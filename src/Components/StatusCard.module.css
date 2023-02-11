@@ -1,0 +1,19 @@
+.container {
+  width: 15vw;
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  background-color: #b39260e3;
+  padding: 0vh 1vw;
+  color: white;
+  border-radius: 10px;
+  align-items: center;
+  margin-left: 1vw;
+  justify-content: space-around;
+  border: 1px solid #b39260e3;
+}
+.container div {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+}

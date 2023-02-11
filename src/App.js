@@ -3,6 +3,7 @@ import NavBar from "./Components/Navbar";
 import ContentHolderPage from "./Pages/ContentHolderPage";
 import SideBarHolderPage from "./Pages/SideBarHolderPage";
 import "bootstrap/dist/css/bootstrap.min.css";
+import StatusBar from "./Components/StatusBar";
 function App() {
   return (
     <div className={classes.container}>
@@ -17,9 +18,7 @@ function App() {
           <SideBarHolderPage />
         </div>
       </div>
-      <div className={classes.statusBar}>
-        Status Bar
-      </div>
+      <StatusBar />
     </div>
   );
 }

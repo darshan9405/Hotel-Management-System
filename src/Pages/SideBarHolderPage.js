@@ -5,11 +5,9 @@ const SideBarHolderPage = () => {
   return (
     <div className={classes.container}>
       {sideData.map((data) => {
-        var table = data.table;
+        var table = data.table.toString();
         var name = data.name;
-        return (
-          <SideComponent key={toString(table)} name={name} table={table} />
-        );
+        return <SideComponent key={table} name={name} table={table} />;
       })}
     </div>
   );

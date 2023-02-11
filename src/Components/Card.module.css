@@ -4,3 +4,9 @@
   font-family: "Barlow", sans-serif;
   border-bottom: 1px solid #b39260e3 !important;
 }
+.card {
+  margin: 1vh 1vw;
+}
+.card:hover {
+  box-shadow: -2px -2px 5px #b39260e3 !important;
+}

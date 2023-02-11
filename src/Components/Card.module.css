@@ -1,0 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
+
+.header {
+  font-family: "Barlow", sans-serif;
+  border-bottom: 1px solid #b39260e3 !important;
+}

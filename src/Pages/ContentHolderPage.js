@@ -2,7 +2,7 @@ import MyCard from "../Components/MyCard";
 import classes from "./ContentHolderPage.module.css";
 import { tableData } from "../data/data";
 import SideComponentOrder from "../Components/Orders/SideComponentOrder";
-const ContentHolderPage = () => {
+const ContentHolderPage = (props) => {
   return (
     // <div className={classes.contentHolder}>
     //   {tableData.map((data) => {
@@ -11,7 +11,7 @@ const ContentHolderPage = () => {
     //     return <MyCard header={key[0]} status={value[0]} key={key[0]} />;
     //   })}
     // </div>
-    <SideComponentOrder />
+    <SideComponentOrder addItemHandler={props.addItemHandler} />
   );
 };
 export default ContentHolderPage;

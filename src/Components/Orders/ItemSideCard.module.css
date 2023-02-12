@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 9vh;
+  display: flex;
+  flex-direction: row;
+  background-color: #b39260e3;
+  padding: 0vh 1vw;
+  color: white;
+  border-radius: 10px;
+  align-items: center;
+  /* margin-left: 1vw; */
+  border: 1px solid #b39260e3;
+  user-select: none;
+  margin: 1vh 1vw;
+}
+.gridLeft {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  font-size: 1rem;
+}
+.gridRight {
+  display: flex;
+  width: 10%;
+  justify-content: flex-end;
+}

@@ -3,7 +3,8 @@ import { menusData } from "../../data/data";
 import { itemsData } from "../../data/data";
 import MenuCard from "./MenuCard";
 import { useState } from "react";
-const SideComponentOrder = () => {
+import ItemCard from "./ItemCard";
+const SideComponentOrder = (props) => {
   const [selected, setSelected] = useState([]);
 
   const menuSelectHandler = (name) => {
@@ -29,7 +30,14 @@ const SideComponentOrder = () => {
       <div className={classes.items}>
         {selected !== null &&
           selected.map((item) => {
-            return <MenuCard name={item} key={item} selectHandler={null} />;
+            return (
+              <ItemCard
+                name={item}
+                key={item}
+                selectHandler={null}
+                addItemHandler={props.addItemHandler}
+              />
+            );
           })}
       </div>
     </div>

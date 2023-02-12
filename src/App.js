@@ -4,7 +4,22 @@ import ContentHolderPage from "./Pages/ContentHolderPage";
 import SideBarHolderPage from "./Pages/SideBarHolderPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import StatusBar from "./Components/StatusBar";
+import { useState } from "react";
 function App() {
+  const [orderData, setOrderData] = useState([]);
+
+  const addItem = (itemInfo) => {
+    setOrderData((prevState) => {
+      const index = prevState.findIndex((value) => {
+        return value.title === itemInfo.title;
+      });
+      if (index === -1) return [...prevState, itemInfo];
+      let data = prevState;
+      data[index].quantity = data[index].quantity + 1;
+      data[index].price = data[index].quantity * 45;
+      return [...data];
+    });
+  };
   return (
     <div className={classes.container}>
       <div className={classes.titleBar}>
@@ -12,10 +27,10 @@ function App() {
       </div>
       <div className={classes.contentContainer}>
         <div className={classes.content}>
-          <ContentHolderPage />
+          <ContentHolderPage addItemHandler={addItem} />
         </div>
         <div className={classes.sideBar}>
-          <SideBarHolderPage />
+          <SideBarHolderPage OrderedItems={orderData} />
         </div>
       </div>
       <StatusBar />

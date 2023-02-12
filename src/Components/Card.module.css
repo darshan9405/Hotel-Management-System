@@ -6,6 +6,10 @@
 }
 .card {
   margin: 1vh 1vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
 }
 .card:hover {
   box-shadow: -2px -2px 5px #b39260e3 !important;

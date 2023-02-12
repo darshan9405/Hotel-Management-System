@@ -17,6 +17,12 @@ const ItemsCart = (props) => {
     <div className={classes.container}>
       <div className={classes.billContainer}>
         <div>Total Amount : ₹{totalValue}</div>
+        <Button
+          variant="success"
+          style={{ margin: "1vh 1vw", alignSelf: "flex-end" }}
+        >
+          Pay
+        </Button>
       </div>
       {props.OrderedItems.map((data, index) => {
         var key = index.toString();

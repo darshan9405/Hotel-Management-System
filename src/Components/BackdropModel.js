@@ -17,18 +17,12 @@ const BackdropModel = (props) => {
           <Modal.Title>Consumer Info Table No: {props.tableNo}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <ConsumerForm />
+          <ConsumerForm
+            tableHandlerFunction={props.tableHandlerFunction}
+            tableNo={props.tableNo}
+            setBackdrop = {props.setBackdrop}
+          />
         </Modal.Body>
-        <Modal.Footer>
-          <Button
-            variant="primary"
-            onClick={() => {
-              props.setBackdrop();
-            }}
-          >
-            Submit
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );

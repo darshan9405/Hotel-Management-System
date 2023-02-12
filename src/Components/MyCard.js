@@ -6,18 +6,23 @@ const MyCard = (props) => {
   const [openBackDrop, setOpenBackDrop] = useState(false);
 
   const backDropHandler = () => {
-    setOpenBackDrop(!openBackDrop);
+    if (props.status === "Vacent") setOpenBackDrop(!openBackDrop);
+    else props.orderPageHandler();
   };
 
   return (
     <>
       {openBackDrop ? (
-        <BackdropModel tableNo={props.header} setBackdrop={backDropHandler} />
+        <BackdropModel
+          tableNo={props.header}
+          setBackdrop={backDropHandler}
+          tableHandlerFunction={props.tableHandlerFunction}
+        />
       ) : null}
       <Card
         style={{
-          width: "14rem",
-          height: "10rem",
+          width: "12rem",
+          height: "8rem",
           backgroundColor: "#F5F5F5",
           border: "1px solid #b39260e3",
           color: "#062A49",

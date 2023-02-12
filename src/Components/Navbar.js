@@ -6,7 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import logo from "../images/logo.png";
 import classes from "./Navbar.module.css";
-function NavBar() {
+function NavBar(props) {
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -22,6 +22,15 @@ function NavBar() {
           >
             <Nav.Link href="#action1">Orders</Nav.Link>
             <Nav.Link href="#action2">Consumers</Nav.Link>
+            {props.orderPage && (
+              <Nav.Link
+                onClick={() => {
+                  props.orderPageHandler();
+                }}
+              >
+                Tables
+              </Nav.Link>
+            )}
           </Nav>
           <Form className="d-flex">
             <Form.Control

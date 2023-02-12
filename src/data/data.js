@@ -1,31 +1,21 @@
 export const tableData = [
   {
-    1: "Vacent",
+    table: 1,
+    status: "Vacent",
+    name: null,
+    order: [],
   },
-  { 2: "Booked" },
-  { 3: "Vacent" },
-  { 4: "Booked" },
-  { 5: "Vacent" },
-  { 6: "Booked" },
-  { 7: "Vacent" },
-  { 8: "Vacent" },
-  { 9: "Booked" },
-  { 10: "Vacent" },
-  { 11: "Vacent" },
-  { 12: "Booked" },
-];
-
-export const sideData = [
-  { table: 2, name: "Mr Rohan" },
-  { table: 4, name: "xyz" },
-  { table: 6, name: "adfad" },
-  { table: 9, name: "Mr tom" },
-  { table: 12, name: "jerry" },
-  { table: 13, name: "Mr Rohan" },
-  { table: 1, name: "xyz" },
-  { table: 5, name: "adfad" },
-  { table: 7, name: "Mr tom" },
-  { table: 88, name: "jerry" },
+  { table: 2, status: "Vacent", name: null, order: [] },
+  { table: 3, status: "Vacent", name: null, order: [] },
+  { table: 4, status: "Vacent", name: null, order: [] },
+  { table: 5, status: "Vacent", name: null, order: [] },
+  { table: 6, status: "Vacent", name: null, order: [] },
+  { table: 7, status: "Vacent", name: null, order: [] },
+  { table: 8, status: "Vacent", name: null, order: [] },
+  { table: 9, status: "Vacent", name: null, order: [] },
+  { table: 10, status: "Vacent", name: null, order: [] },
+  { table: 11, status: "Vacent", name: null, order: [] },
+  { table: 12, status: "Vacent", name: null, order: [] },
 ];
 
 export const statusData = [

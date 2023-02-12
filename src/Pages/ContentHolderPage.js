@@ -1,16 +1,25 @@
 import MyCard from "../Components/MyCard";
 import classes from "./ContentHolderPage.module.css";
-import { tableData } from "../data/data";
 import SideComponentOrder from "../Components/Orders/SideComponentOrder";
 const ContentHolderPage = (props) => {
-  return (
-    // <div className={classes.contentHolder}>
-    //   {tableData.map((data) => {
-    //     var key = Object.keys(data);
-    //     var value = Object.values(data);
-    //     return <MyCard header={key[0]} status={value[0]} key={key[0]} />;
-    //   })}
-    // </div>
+  return props.orderPage === false ? (
+    <div className={classes.contentHolder}>
+      {props.tableData.map((data) => {
+        var key = data.table;
+        var value = data.status;
+        console.log(key,value)
+        return (
+          <MyCard
+            header={key}
+            status={value}
+            key={key}
+            orderPageHandler={props.orderPageHandler}
+            tableHandlerFunction={props.tableHandlerFunction}
+          />
+        );
+      })}
+    </div>
+  ) : (
     <SideComponentOrder addItemHandler={props.addItemHandler} />
   );
 };

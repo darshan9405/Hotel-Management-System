@@ -8,7 +8,9 @@
   align-items: center;
   border-radius: 10px;
   border: 1px solid #b39260e3;
+  box-shadow: -1px -1px 3px #b39260e3;
   height: 4rem;
+  cursor: pointer;
 }
 .Buttons {
   display: flex;

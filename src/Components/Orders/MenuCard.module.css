@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
+
+.card {
+  margin: 1vh 1vw;
+  font-size: 1rem;
+  font-family: "Barlow", sans-serif;
+  color: #062a49;
+  box-shadow: -1px -1px 4px #b39260e3 !important;
+  border: 1px solid #b39260e3;
+  cursor: pointer;
+}
+
+.card:hover{
+    box-shadow: -2px -2px 5px #b39260e3 !important;
+}

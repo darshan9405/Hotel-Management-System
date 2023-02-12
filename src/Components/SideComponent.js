@@ -8,7 +8,7 @@ const SideComponent = (props) => {
       </div>
       <div className={classes.Buttons}>
         <CloseButton />
-        <DropdownButton title ={""}/>
+        <DropdownButton />
       </div>
     </div>
   );

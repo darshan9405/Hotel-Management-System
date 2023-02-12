@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  margin:1vh 1vw;
+  padding: 1vh 1vw;
+  width: inherit;
+}
+.menus {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-height: 50%;
+  width: inherit;
+  height: 38vh;
+}
+.items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-height: 50%;
+  width: inherit;
+  height: 34vh;
+  border-top: 2px solid #062a49;
+  padding:1vh 1vw;
+}

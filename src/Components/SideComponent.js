@@ -1,4 +1,4 @@
-import { CloseButton, DropdownButton } from "react-bootstrap";
+import { CloseButton, DropdownButton, Dropdown } from "react-bootstrap";
 import classes from "./SideComponent.module.css";
 const SideComponent = (props) => {
   return (
@@ -7,8 +7,22 @@ const SideComponent = (props) => {
         <p>Table-{props.table}</p> <p>{props.name}</p>
       </div>
       <div className={classes.Buttons}>
-        <CloseButton />
-        {/* <DropdownButton /> */}
+        <CloseButton
+          onClick={() => {
+            props.paymentHandler(props.table);
+          }}
+        />
+        <Dropdown>
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
+            Items
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {props.OrderedItems.map((value) => {
+              if (value.table !== props.table) return null;
+              return <Dropdown.Item>{value.title}</Dropdown.Item>;
+            })}
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
     </div>
   );

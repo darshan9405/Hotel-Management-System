@@ -19,7 +19,15 @@ const SideBarHolderPage = (props) => {
       {sideData.map((data) => {
         var table = data.table;
         var name = data.name;
-        return <SideComponent key={table} name={name} table={table} />;
+        return (
+          <SideComponent
+            key={table}
+            name={name}
+            table={table}
+            paymentHandler={props.paymentHandler}
+            OrderedItems={props.OrderedItems}
+          />
+        );
       })}
       {sideData.length === 0 ? (
         <img

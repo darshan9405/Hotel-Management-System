@@ -20,8 +20,8 @@ function NavBar(props) {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Orders</Nav.Link>
-            <Nav.Link href="#action2">Consumers</Nav.Link>
+            <Nav.Link>Orders</Nav.Link>
+            <Nav.Link>Consumers</Nav.Link>
             {props.orderPage && (
               <Nav.Link
                 onClick={() => {

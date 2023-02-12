@@ -6,17 +6,17 @@ const ItemsCart = (props) => {
   const [totalValue, setTotalValue] = useState(0);
   const [data, setData] = useState([]);
   useEffect(() => {
-    let total = 0;
     const tempData = props.OrderedItems.filter((value) => {
       return value.table === props.selectedTableNo;
     });
     setData(tempData);
-    data.forEach((element) => {
-      total += element.price;
-    });
-
-    setTotalValue(total);
   }, [props.OrderedItems]);
+  let total = 0;
+  data.forEach((element) => {
+    total += element.price;
+  });
+
+  if (totalValue !== total) setTotalValue(total);
   const paymentHandler = () => {
     props.paymentHandler(props.selectedTableNo);
   };
@@ -39,7 +39,7 @@ const ItemsCart = (props) => {
             title={data.title}
             quantity={data.quantity}
             price={data.price}
-            key = {key}
+            key={key}
           />
         );
       })}

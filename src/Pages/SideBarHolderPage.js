@@ -29,7 +29,10 @@ const SideBarHolderPage = (props) => {
       ) : null}
     </div>
   ) : (
-    <ItemsCart OrderedItems={props.OrderedItems} />
+    <ItemsCart
+      OrderedItems={props.OrderedItems}
+      addItemHandler={props.orderPageHandler}
+    />
   );
 };
 export default SideBarHolderPage;

@@ -7,7 +7,6 @@ const ContentHolderPage = (props) => {
       {props.tableData.map((data) => {
         var key = data.table;
         var value = data.status;
-        console.log(key,value)
         return (
           <MyCard
             header={key}

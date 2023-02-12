@@ -16,7 +16,10 @@ const ItemsCart = (props) => {
     });
 
     setTotalValue(total);
-  }, [props.OrderedItems, data]);
+  }, [props.OrderedItems]);
+  const paymentHandler = () => {
+    props.paymentHandler(props.selectedTableNo);
+  };
   return (
     <div className={classes.container}>
       <div className={classes.billContainer}>
@@ -24,6 +27,7 @@ const ItemsCart = (props) => {
         <Button
           variant="success"
           style={{ margin: "1vh 1vw", alignSelf: "flex-end" }}
+          onClick={paymentHandler}
         >
           Pay
         </Button>
@@ -35,6 +39,7 @@ const ItemsCart = (props) => {
             title={data.title}
             quantity={data.quantity}
             price={data.price}
+            key = {key}
           />
         );
       })}

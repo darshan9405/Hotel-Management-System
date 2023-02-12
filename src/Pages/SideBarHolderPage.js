@@ -9,7 +9,7 @@ const SideBarHolderPage = (props) => {
     const data = props.tableData.filter((value) => {
       return value.status === "Booked";
     });
-    if (data.length !== 0) setSideData(data);
+    setSideData(data);
   }, [props.tableData]);
   return props.orderPage === false ? (
     <div
@@ -30,9 +30,10 @@ const SideBarHolderPage = (props) => {
     </div>
   ) : (
     <ItemsCart
+      paymentHandler={props.paymentHandler}
       selectedTableNo={props.selectedTableNo}
+      orderPageHandler={props.orderPageHandler}
       OrderedItems={props.OrderedItems}
-      addItemHandler={props.orderPageHandler}
     />
   );
 };

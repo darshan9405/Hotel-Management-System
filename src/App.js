@@ -14,6 +14,25 @@ function App() {
   const setSelectedTableNoHandler = (tableNo) => {
     setSelectedTableNo(tableNo);
   };
+  const paymentHandler = (tableNo) => {
+    setOpenOrderPage(false);
+    var dataAfterPayment = orderData.filter((value) => {
+      return value.table !== tableNo;
+    });
+    var tabelDataAfterPayment = tableUserData;
+    const index = tabelDataAfterPayment.findIndex((value) => {
+      return value.table === tableNo;
+    });
+    tabelDataAfterPayment[index] = {
+      table: tableNo,
+      status: "Vacent",
+      items: [],
+      name: null,
+    };
+    setTableData([...tabelDataAfterPayment]);
+    setOrderData([...dataAfterPayment]);
+    setSelectedTableNo(-1);
+  };
   const tableHandlerFunction = (tableData) => {
     var index = tableUserData.findIndex((value) => {
       return tableData.table === value.table;
@@ -65,6 +84,7 @@ function App() {
             orderPage={orderPage}
             tableData={tableUserData}
             selectedTableNo={selectedTableNo}
+            paymentHandler={paymentHandler}
           />
         </div>
       </div>

@@ -31,6 +31,7 @@ const MyCard = (props) => {
         }}
         className={classes.card}
         onClick={() => {
+          props.setSelectedTableNoHandler(props.header);
           backDropHandler(props.header);
         }}
       >

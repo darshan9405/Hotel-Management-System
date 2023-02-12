@@ -14,12 +14,16 @@ const ContentHolderPage = (props) => {
             key={key}
             orderPageHandler={props.orderPageHandler}
             tableHandlerFunction={props.tableHandlerFunction}
+            setSelectedTableNoHandler={props.setSelectedTableNoHandler}
           />
         );
       })}
     </div>
   ) : (
-    <SideComponentOrder addItemHandler={props.addItemHandler} />
+    <SideComponentOrder
+      addItemHandler={props.addItemHandler}
+      selectedTableNo={props.selectedTableNo}
+    />
   );
 };
 export default ContentHolderPage;

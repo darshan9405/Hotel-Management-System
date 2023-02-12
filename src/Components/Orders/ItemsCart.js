@@ -4,15 +4,19 @@ import ItemSideCard from "./ItemSideCard";
 import { useState, useEffect } from "react";
 const ItemsCart = (props) => {
   const [totalValue, setTotalValue] = useState(0);
+  const [data, setData] = useState([]);
   useEffect(() => {
     let total = 0;
-    props.OrderedItems.forEach((element) => {
+    const tempData = props.OrderedItems.filter((value) => {
+      return value.table === props.selectedTableNo;
+    });
+    setData(tempData);
+    data.forEach((element) => {
       total += element.price;
     });
-    if (total !== 0) {
-      setTotalValue(total);
-    }
-  }, [props.OrderedItems]);
+
+    setTotalValue(total);
+  }, [props.OrderedItems, data]);
   return (
     <div className={classes.container}>
       <div className={classes.billContainer}>
@@ -24,7 +28,7 @@ const ItemsCart = (props) => {
           Pay
         </Button>
       </div>
-      {props.OrderedItems.map((data, index) => {
+      {data.map((data, index) => {
         var key = index.toString();
         return (
           <ItemSideCard

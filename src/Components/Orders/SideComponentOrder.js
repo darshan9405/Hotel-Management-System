@@ -36,6 +36,7 @@ const SideComponentOrder = (props) => {
                 key={item}
                 selectHandler={null}
                 addItemHandler={props.addItemHandler}
+                selectedTableNo={props.selectedTableNo}
               />
             );
           })}

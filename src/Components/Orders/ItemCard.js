@@ -11,7 +11,12 @@ const ItemCard = (props) => {
         userSelect: "none",
       }}
       onClick={() => {
-        props.addItemHandler({ title: props.name, quantity: 1, price: 45 });
+        props.addItemHandler({
+          table: props.selectedTableNo,
+          title: props.name,
+          quantity: 1,
+          price: 45,
+        });
       }}
       className={classes.card}
     >

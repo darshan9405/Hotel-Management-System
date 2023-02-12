@@ -7,9 +7,13 @@ import StatusBar from "./Components/StatusBar";
 import { useState } from "react";
 import { tableData } from "./data/data";
 function App() {
+  const [selectedTableNo, setSelectedTableNo] = useState(-1);
   const [orderData, setOrderData] = useState([]);
   const [orderPage, setOpenOrderPage] = useState(false);
   const [tableUserData, setTableData] = useState(tableData);
+  const setSelectedTableNoHandler = (tableNo) => {
+    setSelectedTableNo(tableNo);
+  };
   const tableHandlerFunction = (tableData) => {
     var index = tableUserData.findIndex((value) => {
       return tableData.table === value.table;
@@ -28,7 +32,7 @@ function App() {
   const addItem = (itemInfo) => {
     setOrderData((prevState) => {
       const index = prevState.findIndex((value) => {
-        return value.title === itemInfo.title;
+        return value.title === itemInfo.title && value.table === itemInfo.table;
       });
       if (index === -1) return [...prevState, itemInfo];
       let data = prevState;
@@ -50,6 +54,8 @@ function App() {
             orderPage={orderPage}
             tableData={tableUserData}
             tableHandlerFunction={tableHandlerFunction}
+            setSelectedTableNoHandler={setSelectedTableNoHandler}
+            selectedTableNo={selectedTableNo}
           />
         </div>
         <div className={classes.sideBar}>
@@ -58,6 +64,7 @@ function App() {
             orderPageHandler={orderPageHandler}
             orderPage={orderPage}
             tableData={tableUserData}
+            selectedTableNo={selectedTableNo}
           />
         </div>
       </div>

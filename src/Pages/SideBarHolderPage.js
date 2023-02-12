@@ -30,6 +30,7 @@ const SideBarHolderPage = (props) => {
     </div>
   ) : (
     <ItemsCart
+      selectedTableNo={props.selectedTableNo}
       OrderedItems={props.OrderedItems}
       addItemHandler={props.orderPageHandler}
     />
